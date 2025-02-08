@@ -1,53 +1,77 @@
 
 // Disclosure Content
 const disclosureContent = `
-This Disclosure Agreement ("Agreement") is entered into between [Your Company Name] ("Company") 
-and the undersigned individual or entity ("Trader"), and sets forth the terms and conditions governing 
-the trading of stocks and securities through the Company's platform or services.
+We offer a range of structured investment plans designed to cater to diverse financial goals and investment capacities. Each plan is tailored to provide competitive returns, with daily interest accruals and referral commission opportunities. Below are the details of our available plans:
 
-1. Acknowledgment of Risks  
-1.1 Trading stocks and securities involves inherent risks, including, but not limited to, the risk of financial loss, 
-market volatility, and unpredictable market events.  
-1.2 Past performance of securities is not indicative of future results, and the Company does not guarantee any returns on investments.  
-1.3 Investments in stocks are subject to market risks, and the Trader assumes full responsibility for all trading decisions and outcomes.  
+1. First Plan
+  
+  - Minimum Deposit: $200
 
-2. No Guarantee or Warranty  
-2.1 The Company provides trading tools, market data, and informational resources "as is" and does not guarantee their accuracy, completeness, or timeliness.  
-2.2 The Company does not provide investment advice, recommendations, or any guarantee of profitability.  
+  - Maximum Deposit: $9,999
 
-3. Compliance with Laws and Regulations  
-3.1 The Trader agrees to comply with all applicable laws, regulations, and rules related to the trading of stocks and securities, 
-including but not limited to securities laws, anti-money laundering laws, and tax reporting obligations.  
-3.2 The Trader is solely responsible for understanding and adhering to these regulations.  
+  - Investment Tenure: 6 days
 
-4. Confidentiality  
-4.1 Any proprietary information, trading algorithms, or tools provided by the Company are confidential and must not be disclosed, 
-shared, or distributed without prior written consent from the Company.  
-4.2 The Trader agrees to protect such information and use it solely for the purposes of trading as permitted by the Company.  
+  - Daily Interest Rate: 2.5%
 
-5. Limitation of Liability  
-5.1 The Company is not liable for any losses, damages, or expenses incurred by the Trader due to market conditions, 
-technical issues, or trading decisions.  
-5.2 The Trader understands that trading systems may be subject to interruptions, delays, or errors, and the Company will not 
-be held liable for such occurrences.  
+  - Referral Commission: 5%
 
-6. Termination  
-6.1 The Company reserves the right to terminate the Trader's account or restrict trading activities at its sole discretion if 
-it determines that the Trader has violated this Agreement or applicable laws.  
-6.2 Upon termination, the Trader must immediately cease using the Company’s services and return or delete any proprietary 
-information obtained through the Company.  
+Ideal for entry-level investors, this plan offers a short-term commitment with consistent daily returns and referral earning potential.
 
-7. Amendments  
-7.1 The Company reserves the right to amend this Agreement at any time.  
-7.2 Traders will be notified of any material changes via email or the Company’s platform, and continued use of the services 
-constitutes acceptance of such changes.  
+2. Economy Plan
 
-8. Governing Law  
-This Agreement is governed by the laws of [Jurisdiction]. Any disputes arising out of this Agreement shall be resolved 
-in the courts of [Jurisdiction].  
+-Minimum Deposit: $10,000
 
-9. Acknowledgment and Agreement  
-By signing this Agreement, the Trader acknowledges having read, understood, and agreed to the terms and conditions herein.  
+-Maximum Deposit: $29,999
+
+-Investment Tenure: 10 days
+
+-Daily Interest Rate: 3%
+
+-Referral Commission: 5%
+
+Designed for moderate investors, this plan provides enhanced daily returns and a slightly longer tenure to maximize earnings.
+
+3. Business Plan
+
+-Minimum Deposit: $30,000
+
+-Maximum Deposit: $49,999
+
+-Investment Tenure: 15 days
+
+-Daily Interest Rate: 4%
+
+-Referral Commission: 5%
+
+Tailored for serious investors, this plan offers higher daily interest rates and a mid-term investment horizon for optimal growth.
+
+4. Universal Plan
+
+-Minimum Deposit: $50,000 and above
+
+-Investment Tenure: 30 days
+
+-Daily Interest Rate: 4.7%
+
+-Referral Commission: 5%
+
+Our premium plan is designed for high-net-worth individuals and institutional investors, offering the highest daily returns and a long-term investment period for substantial wealth accumulation.
+
+Key Features Across All Plans:
+
+-Daily Interest: Accrued and compounded for the duration of the investment.
+
+-Referral Commissions: Earn 5% on deposits made by referred clients.
+
+-Flexible Tenures: Plans are structured to suit varying investment horizons.
+
+-Transparent Terms: Clear and straightforward terms for all investment plans.
+
+For further details or to begin your investment journey, please contact our support team or visit our platform to select the plan that aligns with your financial objectives.
+
+
+
+
 `;
 
 const image = "https://plus.unsplash.com/premium_vector-1711987884895-4e90ec0b4da9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmFua2luZ3xlbnwwfHwwfHx8MA%3D%3D";
@@ -64,7 +88,7 @@ const Trade = () => {
         }}
         className="hero h-[40vh] rounded-2xl flex items-center pt-20"
       >
-        <p className="text-4xl font-extrabold text-white">How would you like to trade</p>
+        <p className="text-4xl font-extrabold text-white">How would you like to Invest</p>
       </div>
 
       {/* Main Content */}
@@ -86,7 +110,7 @@ const Trade = () => {
 
         {/* Disclosure Agreement */}
         <div className="flex flex-col gap-5">
-          <h2 className="text-2xl font-bold">Disclosure Agreement</h2>
+          <h2 className="text-2xl font-bold">Investment Plans</h2>
           <p className="whitespace-pre-wrap">{disclosureContent}</p>
         </div>
       </div>

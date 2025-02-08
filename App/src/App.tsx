@@ -47,7 +47,8 @@ function App() {
 
   return (
     <div className='font-connections'>
-      {auth?<Main/>:<Auth/>}
+      {/* {auth?<Main/>:<Auth/>} */}
+      <Main/>
     </div>
   )
 }

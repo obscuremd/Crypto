@@ -6,8 +6,6 @@ import List from "../Components/AccountComponents/List";
 const Accounts = () => {
   const { userData, history } = useGen();
   
-
-
   // Function to format the balance with commas
   const formatWithCommas = (balance: number) => {
     if (!balance || balance <= 0) return "0";

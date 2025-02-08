@@ -15,13 +15,20 @@ const Hero = () => {
                 <div className="max-w-md">
                     <h1 className="text-5xl font-bold">Welcome Back</h1>
                     <p className="py-6">
-                        We are dedicated to providing an exceptional banking experience, offering personalized banking services, flexible loans, tailored credit card solutions, and expert investment opportunities. Our focus is on helping you achieve your financial goals with ease and confidence.
+                        We are committed to delivering an exceptional crypto investment experience, offering personalized services, flexible earning opportunities, tailored portfolio solutions, and expert guidance in digital asset investments. Our mission is to empower you to achieve your financial goals with confidence and ease in the dynamic world of cryptocurrency.
                     </p>
-                    <button className="btn btn-neutral">
-                      <Link to={'/transfers'}>
-                        Transfer
-                      </Link>
-                    </button>
+                    <div className="join">
+                      <button className="btn join-item">
+                        <Link to={'/transfers'}>
+                          Transfer
+                        </Link>
+                      </button>
+                      <button className="btn join-item">
+                        <Link to={'/add-money'}>
+                          Add Money
+                        </Link>
+                      </button>
+                    </div>
                 </div>
             </div>
         </div>

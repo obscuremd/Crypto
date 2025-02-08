@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1 pl-2">
-          <img src={logo} className='w-16' alt="" />
+          <img src={logo} className='w-24' alt="" />
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">

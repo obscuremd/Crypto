@@ -1,4 +1,9 @@
-import { CoinsSwap, DataTransferCheck, DollarCircle, SendDollars } from 'iconoir-react';
+import { 
+  CoinsSwap, 
+  // DataTransferCheck, 
+  DollarCircle, 
+  // SendDollars 
+} from 'iconoir-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const BottomNav = () => {
@@ -12,7 +17,7 @@ const BottomNav = () => {
                 <DollarCircle />
             </Link>
         </button>
-        <button className={pathname === '/transfer' ? 'active' : ''}>
+        {/* <button className={pathname === '/transfer' ? 'active' : ''}>
             <Link to={'/transfer'}>
                 <SendDollars />
             </Link>
@@ -21,7 +26,7 @@ const BottomNav = () => {
             <Link to={'/deposit-checks'}>
                 <DataTransferCheck />
             </Link>
-        </button>
+        </button> */}
         <button className={pathname === '/trade' ? 'active' : ''}>
             <Link to={'/trade'}>
                 <CoinsSwap />
