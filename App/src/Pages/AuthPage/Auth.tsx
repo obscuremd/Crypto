@@ -1,7 +1,5 @@
 import { Bank, Key } from 'iconoir-react'
-// import Card from '../../Component/Card'
-// import { IsMobile } from '../../Exports/Constatants'
-// import Logo from '../../assets/original.svg'
+import Logo from '../../assets/logo copy.png'
 import { useGen } from '../../Providers/GeneralProvider'
 import { useState } from 'react'
 import axios from 'axios'
@@ -34,6 +32,7 @@ const Auth = () => {
     <div className='flex flex-col md:flex-row gap-5 p-5 items-center justify-center w-full min-h-screen'>
         <div className=' flex flex-col items-center gap-5 '>
           <div className="card bg-base-100 w-96 shadow-xl flex flex-col gap-5 p-5">
+            <img src={Logo} className='w-24'/>
             <p className='font-bold text-3xl'>Core wealthier investment</p>
             Sign in to with your account number and password
             <label className="input input-bordered flex items-center gap-2">
