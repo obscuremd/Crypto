@@ -17,7 +17,7 @@ import axios from 'axios'
 
 const Main = () => {
 
-  const { url, setUserData} = useGen()
+  const { url,userData, setUserData, setHistory} = useGen()
   const {user} = useClerk()
 
   console.log(user?.username)
@@ -37,6 +37,22 @@ const Main = () => {
     }
     getUser()
   },[])
+  useEffect(()=>{
+    const getHistory =async()=>{
+      try {
+        const res = await axios.get(`${url}/history/user/${userData?._id}`)
+        console.log('histor:',res)
+        if(res.data.success){
+          setHistory(res.data)
+        }else{
+          alert('error getting user')
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getHistory()
+  },[userData])
 
   return (
     <BrowserRouter>
