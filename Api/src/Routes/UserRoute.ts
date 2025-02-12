@@ -3,6 +3,7 @@ import User from "../Models/UserModel";
 import {
   checkAuth,
   deletes,
+  getUser,
   login,
   logout,
   register,
@@ -15,6 +16,9 @@ router.post("/register", register);
 
 // login
 router.post("/login", login);
+
+// get user by full_name
+router.get("/:full_name", getUser);
 
 // update user
 router.put("/:id", update);

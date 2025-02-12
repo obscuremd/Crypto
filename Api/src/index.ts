@@ -34,11 +34,11 @@ app.use(
       if (
         !origin ||
         [
-          "https://backend-zeta-livid-99.vercel.app",
-          "https://boa-backend.vercel.app",
+          "https://crypto-backend-six.vercel.app",
+          "https://www.corewealthierinvestment.com",
           "http://localhost:5173",
           "http://localhost:5174",
-          "https://www.eaglecountybank.com",
+          "https://crypto12-iota.vercel.app",
           "https://eaglecountybank.vercel.app",
         ].includes(origin)
       ) {

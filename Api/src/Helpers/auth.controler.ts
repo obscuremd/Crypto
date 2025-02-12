@@ -49,6 +49,21 @@ export const login = async (req: Request, res: Response) => {
   }
 };
 
+export const getUser = async (req: Request, res: Response) => {
+  try {
+    const user = await User.findOne({ full_name: req.params.full_name });
+    if (!user) {
+      res.status(401).json({ success: false, message: "user not found" });
+    } else {
+      res.status(200).json({ success: true, message: "user found", user });
+    }
+  } catch (error) {
+    res
+      .status(500)
+      .json({ success: false, message: "internal server error", error });
+  }
+};
+
 export const update = async (req: Request, res: Response) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {

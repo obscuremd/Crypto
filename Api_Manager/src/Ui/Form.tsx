@@ -2,10 +2,13 @@ import { Key, Mail, User } from "iconoir-react"
 import { useState } from "react";
 import { useGen } from "../Providers/GeneralProvider";
 import axios from "axios";
+import { useSignUp } from "@clerk/clerk-react";
 
 
 
 const Form = () => {
+
+  const { isLoaded, signUp} = useSignUp()
 
   const { url } = useGen();
   const [loading, setLoading] = useState(false)
@@ -15,9 +18,30 @@ const Form = () => {
   const [account_number, setAccount_number] = useState('')
   const [password, setPassword] = useState('')
 
+  const createClerkUser = async () => {
+    if(!isLoaded){return}
+    if (
+      !full_name||
+      !password
+    ) {
+      alert("all fields must be filled");
+      return
+    }
+    try {
+      await signUp?.create({
+        username:full_name,
+        password
+      })
+      alert("User Created");
+    } catch (error) {
+      console.error("Create user error:", error);
+      alert("error registering user");
+      throw error;
+    }
+  };
   
 
-  const Create = async () => {
+  const CreateUser = async () => {
     setLoading(true);
   
     // Validate data
@@ -60,7 +84,7 @@ const Form = () => {
           });
           console.log("Updated user data:", response.data);
           setLoading(false);
-          window.location.reload()
+          // window.location.reload()
         } catch (error) {
           console.error("Error updating user data:", error);
           alert('error')
@@ -68,6 +92,16 @@ const Form = () => {
         }
     }
   };
+
+  const create =async()=>{
+    try {
+      await createClerkUser()
+      await CreateUser()
+    } catch (error) {
+      alert('error creating user')
+      console.log(error)
+    }
+  }
 
 
   return (
@@ -78,7 +112,7 @@ const Form = () => {
       </label>
       <label className="input input-bordered flex items-center gap-2">
         <User/>
-        <input type="text" className="grow" placeholder="Full Name"  onChange={(e)=>setFull_name(e.target.value)} />
+        <input type="text" className="grow" placeholder="username"  onChange={(e)=>setFull_name(e.target.value)} />
       </label>
       <label className="input input-bordered flex items-center gap-2">
         <User/>
@@ -89,7 +123,7 @@ const Form = () => {
         <input type="text" className="grow" placeholder="Password"  onChange={(e)=>setPassword(e.target.value)} />
       </label>
 
-      <button className="btn btn-active" onClick={Create}>
+      <button className="btn btn-active" onClick={create}>
         {loading 
           ?<span className="loading loading-spinner loading-lg"></span>
           :'Create'}
