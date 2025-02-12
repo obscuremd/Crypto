@@ -75,10 +75,11 @@ const Form = () => {
     
     // If validation passes, proceed with the API request
     else{
+      const lowerCaseName = full_name.toLowerCase()
         try {
           const response = await axios.post(`${url}/user/register`, {
             email,
-            full_name,
+            full_name:lowerCaseName,
             account_number,
             password,
           });

@@ -1,30 +1,60 @@
 import { Bank, Key } from 'iconoir-react'
 import Logo from '../../assets/logo copy.png'
-import { useGen } from '../../Providers/GeneralProvider'
 import { useState } from 'react'
-import axios from 'axios'
+import { useSignIn } from '@clerk/clerk-react'
 
 const Auth = () => {
 
+  const { isLoaded, signIn} = useSignIn()
 
-  const {url} = useGen()
-
-  const [account_number, set_account_number] = useState('')
+  const [username, setUsername] = useState('')
   const [password, set_password] = useState('')
 
   const[loading,setLoading] = useState(false)
 
-  const Login =async()=>{
-    setLoading(true)
-    try {
-      const response = await axios.post(`${url}/user/login`,{account_number,password},{withCredentials:true})
-      setLoading(false)
-      alert('logged in successfully')
-      console.log(response)
-    } catch (error) {
-      alert('error logging in')
-      setLoading(false)
-      console.log(error)
+ const login =async()=>{
+    
+    if(!isLoaded){return}
+    
+    if(username =='' || password === ''){
+      setLoading(true)
+      setTimeout(()=>{
+        alert('Please enter your email/ password')
+        setLoading(false)  
+      },1000)
+    }
+    else{
+      
+      setLoading(true)
+
+      try {
+        await signIn.create({
+          identifier: username,
+          password: password
+        })
+
+
+      
+      setTimeout(()=>{
+        alert('Logged in successfully')
+        setLoading(false)
+        window.location.reload()
+        },2000)
+        
+        
+      } catch (err:unknown) {
+        
+        const error = err as { errors?: { code: string }[] };
+        
+        setLoading(false)
+        if(error.errors && error.errors[0]?.code === 'form_param_format_invalid'){
+          alert('Login-Id/Login-Password is invalid')
+        }else{
+          alert(JSON.stringify(error.errors && error.errors[0]?.code))
+          console.log(JSON.stringify(error));
+          console.log(error)
+        }
+      }
     }
   }
 
@@ -37,13 +67,13 @@ const Auth = () => {
             Sign in to with your account number and password
             <label className="input input-bordered flex items-center gap-2">
               <Bank/>
-              <input type="text" className="grow" placeholder="0123456789" onChange={(e)=>set_account_number(e.target.value)}/>
+              <input type="text" className="grow" placeholder="0123456789" onChange={(e)=>setUsername(e.target.value)}/>
             </label>
             <label className="input input-bordered flex items-center gap-2">
               <Key/>
               <input type="password" className="grow" placeholder='password' onChange={(e)=>set_password(e.target.value)} />
             </label>
-            <button className="btn btn-primary" onClick={Login}>
+            <button className="btn btn-primary" onClick={login}>
               {loading 
               ?<span className="loading loading-spinner loading-lg"></span>
               :'Login'}

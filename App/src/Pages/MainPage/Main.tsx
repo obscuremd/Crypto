@@ -10,8 +10,34 @@ import PayBills from './Screens/PayBills'
 import WireTransfers from './Screens/WireTransfers'
 import Zelle from './Screens/Zelle'
 import Profile from './Screens/Profile'
+import { useEffect } from 'react'
+import { useGen } from '../../Providers/GeneralProvider'
+import { useClerk } from '@clerk/clerk-react'
+import axios from 'axios'
 
 const Main = () => {
+
+  const { url, setUserData} = useGen()
+  const {user} = useClerk()
+
+  console.log(user?.username)
+
+  useEffect(()=>{
+    const getUser =async()=>{
+      try {
+        const res = await axios.get(`${url}/user/${user?.username}`)
+        if(res.data.success){
+          setUserData(res.data.user)
+        }else{
+          alert('error getting user')
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getUser()
+  },[])
+
   return (
     <BrowserRouter>
         <div className='flex flex-col gap-10'>

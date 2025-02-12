@@ -28,7 +28,7 @@ export default function GeneralProvider({children}:PropsWithChildren) {
 
 
     // fetch user
-    const url = "https://boa-7mml.vercel.app";
+    const url = "https://crypto-server-beryl.vercel.app";
     const [userData, setUserData] = useState<Users| null>(null);
     const [history, setHistory] = useState<History[]>([])
 
