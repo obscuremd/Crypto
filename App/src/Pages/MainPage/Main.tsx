@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import {Route, Routes } from 'react-router-dom'
 import Accounts from './Screens/Accounts'
 import BottomNav from './Components/BottomNav'
 // import PayTransfer from './Screens/PayTransfer'
@@ -34,6 +34,7 @@ const Main = () => {
       } catch (error) {
         console.log(error)
       }
+        
     }
     getUser()
   },[])
@@ -55,7 +56,6 @@ const Main = () => {
   },[userData])
 
   return (
-    <BrowserRouter>
         <div className='flex flex-col gap-10'>
           <Navbar/>
           <Routes>
@@ -73,7 +73,6 @@ const Main = () => {
           </Routes>
           <BottomNav/>
         </div>
-    </BrowserRouter>
   )
 }
 
