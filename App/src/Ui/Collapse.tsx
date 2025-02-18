@@ -28,12 +28,12 @@ const Collapse:React.FC<CollapseProps> = ({primary1, primary2, secondary }) => {
 
                   <div className="py-5 flex flex-col gap-5">
                     <div className="flex justify-between">
-                      <p>BTC Address - {userData?.account_number}</p>
+                      <p>BTC Address - {userData?.btc_account_number}</p>
                       <p>${secondary}</p>
                     </div>
                     <hr className="h-[1px] bg-gray-200" />
                     <div className="flex justify-between">
-                      <p>Etherium Address - {userData?.account_number}</p>
+                      <p>Etherium Address - {userData?.eth_account_number}</p>
                       <p>${secondary}</p>
                     </div>
                   </div>

@@ -15,6 +15,7 @@ export default function GeneralProvider({ children }: PropsWithChildren) {
   
 
     // fetch user
+    // const url = "http://localhost:8800";
     const url = "https://crypto-server-beryl.vercel.app";
     const [userData, setUserData] = useState<Users | null>(null);
     

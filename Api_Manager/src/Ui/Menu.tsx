@@ -42,7 +42,6 @@ const Menu = () => {
                     </div>
                     <div>
                       <p className='text-nowrap'>{item.full_name}</p>
-                      <p>{item.account_number}</p>
                     </div>
                 </button>
               ))

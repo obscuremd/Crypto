@@ -2,7 +2,8 @@ import mongoose, { models } from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    account_number: { type: String },
+    btc_account_number: { type: String },
+    eth_account_number: { type: String },
     full_name: { type: String, default: "" },
     password: { type: String, default: "" },
     profile_picture: {

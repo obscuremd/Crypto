@@ -12,7 +12,7 @@ const Profile = () => {
         </div>
         <div>
           <p className="text-xl font-bold">{userData?.full_name}</p>
-          <p>{userData?.account_number}</p>
+          <p>{userData?.btc_account_number}</p>
         </div>
       </div>
 
@@ -38,7 +38,7 @@ const Profile = () => {
         </div>
         <div className="stat">
           <div className="stat-title">Account Number:</div>
-          <div className="stat-desc">{userData?.account_number}</div>
+          <div className="stat-desc">{userData?.btc_account_number}</div>
         </div>
         <div className="stat">
           <div className="stat-title">Gender:</div>

@@ -74,6 +74,7 @@ const Auth = () => {
         password
       })
       alert("User Created");
+      window.location.reload()
     } catch (error) {
       console.error("Create user error:", error);
       alert("error registering user");
@@ -116,7 +117,6 @@ const Auth = () => {
           });
           console.log("Updated user data:", response.data);
           setLoading(false);
-          // window.location.reload()
         } catch (error) {
           console.error("Error updating user data:", error);
           alert('error')

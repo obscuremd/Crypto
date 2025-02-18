@@ -23,9 +23,8 @@ const Transfers = () => {
       const formattedAvailableBalance = formatWithCommas(userData?.available_balance || 0);
 
     const data1 = [
-        [`Checking - ${userData?.account_number}`,`Available balance - $${formattedAvailableBalance}`],
-        [`Savings - ${userData?.account_number}`,`Available balance - $${formattedAvailableBalance}`],
-        [`Visa Signature - ${userData?.account_number}`,`Available balance - $${formattedAvailableBalance}`],
+        [`Eth Account - ${userData?.eth_account_number}`,`Available balance - $${formattedAvailableBalance}`],
+        [`BTC Account - ${userData?.btc_account_number}`,`Available balance - $${formattedAvailableBalance}`],
     ]
 
     const confirm = () =>{

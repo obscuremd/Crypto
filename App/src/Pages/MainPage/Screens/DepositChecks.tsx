@@ -19,7 +19,7 @@ const DepositChecks = () => {
       <div className="card bg-base-100 w-full shadow-xl">
         <div className="card-body flex">
           <p>your BTC Address</p>
-          <h2 className="card-title">{userData?.account_number}</h2>
+          <h2 className="card-title">{userData?.btc_account_number}</h2>
           <div className="card-actions">
             <button className="btn btn-primary">Copy</button>
           </div>
@@ -28,7 +28,7 @@ const DepositChecks = () => {
       <div className="card bg-base-100 w-full shadow-xl">
         <div className="card-body flex">
           <p>your ETH Address</p>
-          <h2 className="card-title">{userData?.account_number}</h2>
+          <h2 className="card-title">{userData?.eth_account_number}</h2>
           <div className="card-actions">
             <button className="btn btn-primary">Copy</button>
           </div>

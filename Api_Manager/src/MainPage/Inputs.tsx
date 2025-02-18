@@ -14,6 +14,8 @@ const Inputs = () => {
   const [formData, setFormData] = useState({
     full_name: userData?.full_name,
     email: userData?.email,
+    eth_account_number: userData?.eth_account_number,
+    btc_account_number: userData?.btc_account_number,
     phone_number: userData?.phone_number,
     occupation: userData?.occupation,
     date_of_birth: userData?.date_of_birth,
@@ -43,8 +45,10 @@ const Inputs = () => {
       const response = await axios.put(`${url}/user/${userData?._id}`, formData);
       console.log("Updated user data:", response.data);
       setLoading(false)
+      alert("updated")
     } catch (error) {
       console.error("Error updating user data:", error);
+      alert('error')
     }
   };
 
@@ -93,6 +97,31 @@ const Inputs = () => {
                         placeholder={userData?.email}
                         />
                     </label>
+                    <div className="flex w-full gap-2">
+
+                      <label className="input input-bordered flex items-center gap-2">
+                          eth acc number
+                          <input
+                          type="text"
+                          name="eth_account_number"
+                          className="grow"
+                          value={formData.eth_account_number}
+                          onChange={handleInputChange}
+                          placeholder={userData?.eth_account_number}
+                          />
+                      </label>
+                      <label className="input input-bordered flex items-center gap-2">
+                          btc acc number
+                          <input
+                          type="text"
+                          name="btc_account_number"
+                          className="grow"
+                          value={formData.btc_account_number}
+                          onChange={handleInputChange}
+                          placeholder={userData?.btc_account_number}
+                          />
+                      </label>
+                    </div>
                     <label className="input input-bordered flex items-center gap-2">
                         Phone Number
                         <input
